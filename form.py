@@ -1,17 +1,13 @@
-import csv
-import streamlit as st
-import pandas as pd 
+import csv  
 
-f = open('data.csv','w')
-writer = csv.writer(f)
+header = ['name', 'area', 'country_code2', 'country_code3']
+data = ['Afghanistan', 652090, 'AF', 'AFG']
 
-with st.form(key="my_form",clear_on_submit=True):
-    
-    st.write("Enter Note")
-    
-    stock_ticker_input = st.text_input('Stock', key='ticker')
-    note_input = st.text_input('Note', key='note')
-    
-    submitted = st.form_submit_button("Submit")
-    if submitted:
-        writer.writerow(note_input)
+with open('data.csv', 'w', encoding='UTF8') as f:
+    writer = csv.writer(f)
+
+    # write the header
+    writer.writerow(header)
+
+    # write the data
+    writer.writerow(data)
