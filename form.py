@@ -14,5 +14,4 @@ with st.form(key="my_form",clear_on_submit=True):
     
     submitted = st.form_submit_button("Submit")
     if submitted:
-        st.write("Note", note_input, "stock_ticker", stock_ticker_input)
-        writer.writerow(note_input,stock_ticker_input)
+        writer.writerow(note_input)
