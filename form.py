@@ -1,24 +1,14 @@
-import csv
+import pandas as pd
 import streamlit as st
 
-st.title("Form_Demo")
-st.subheader("details etc.")
+FILE_TYPES = ["csv"]
 
-with st.form("form1", clear_on_submit=True):
-    name = st.text_input("enter full name")
-    email = st.text_input("enter email")
-    satisfaction = st.slider("How much do you like our Web App?",
-    min_value = 0, max_value=10)
-    st.write(satisfaction)
-
-    submit = st.form_submit_button("Submit this form")
-
-data = ["This", "is", "a", "Test"]
-with open('data.csv', 'w') as file:
-    writer = csv.writer(file)
-    writer.writerow(data)
+file = st.file_uploader("Upload .csv file", type=FILE_TYPES)
+if file is not None:
+    data = pd.read_csv(file)
+    st.dataframe(data.head(10))
     
-dataframe = {
+    dataframe = {
         "DateTime": ["ss"],
         "Name": ["s"],
         "Email": ["ese"],
@@ -27,4 +17,12 @@ dataframe = {
         "Questions": ["ese"]
     }
 
-dataframe.to_csv('data.csv')
+    # Write the dataframe to a CSV file
+    df = pd.DataFrame(dataframe)
+    df.to_csv("data.csv")
+
+    # Write dataframe to streamlit 
+    st.dataframe(df) 
+
+    # Allow the user to download the new CSV file
+    st.download_file(file, "data.csv")
