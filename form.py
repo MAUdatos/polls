@@ -17,3 +17,4 @@ data = ["This", "is", "a", "Test"]
 with open('data.csv', 'w') as file:
     writer = csv.writer(file)
     writer.writerow(data)
+    data.to_csv('data.csv')
