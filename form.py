@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd 
 
 f = open('data.csv','w')
-write = csv.writer(f)
+writer = csv.writer(f)
 
 with st.form(key="my_form",clear_on_submit=True):
     
