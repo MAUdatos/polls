@@ -1,9 +1,9 @@
 import streamlit as st
 import pandas as pd
-import numpy as np
-import plotly.express as px
-import matplotlib.pyplot as plt
-import re
+#import numpy as np
+#import plotly.express as px
+#import matplotlib.pyplot as plt
+#import re
 
 #__________________________________________________________________________________________________________________________________________________________________
 # Dashboard structure
@@ -28,7 +28,7 @@ df_poll = pd.read_csv('Sistematización y Mapeo MAU. Reacciones y visiones sobre
 #__________________________________________________________________________________________________________________________________________________________________
 # st.caption('Sistematización y Mapeo. Poll results sobre Prototipo Web App 1.0 - MAU 2023.')
 st.caption('<div style="text-align: left">Sistematización y Mapeo. Prototipo Web App  1.0</div>', unsafe_allow_html=True)          
-st.image("logo_mau.png", width=125)
+#st.image("logo_mau.png", width=125)
 
 st.header("Resultados de feedback sobre la herramienta. 2023.")
 st.markdown("  ")
