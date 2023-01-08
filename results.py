@@ -21,7 +21,7 @@ hide_table_row_index = """
 st.markdown(hide_table_row_index, unsafe_allow_html=True)
 
 # data
-df_poll = pd.read_csv('Sistematización y Mapeo MAU. Reacciones y visiones sobre futuros avances. .csv',sep=';').dropna(how = 'all')             # Base de datos respuestas poll 01.07.2023
+df_poll = pd.read_csv('Sistematización y Mapeo MAU. Reacciones y visiones sobre futuros avances. .csv',sep=',').dropna(how = 'all')             # Base de datos respuestas poll 01.07.2023
 
 #df_bbdd = df_bbdd.sort_values(by=['Organización_Huerta_Colectivo', 'Nombre_representante'])
 #df_bbdd.rename(columns = {'Latitud': 'lat', 'Longitud':'lon',},  inplace = True)  #obligatory names for the map
